@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The New Haven Register — County Bowling Archive</title>
+<style>
+:root{--ink:#17140f;--news:#ded1aa;--red:#76251f}*{box-sizing:border-box}html,body{min-height:100%}body{margin:0;background:#171511;color:var(--ink);font-family:Georgia,'Times New Roman',serif;overflow-x:hidden}body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 25%,#594c37 0,#231f18 55%,#0d0c09 100%)}
+.stage{min-height:100vh;display:grid;place-items:center;padding:22px 16px 88px;position:relative}.book{width:min(1120px,96vw);height:clamp(470px,calc(100vh - 130px),720px);position:relative;perspective:1800px;filter:drop-shadow(0 28px 28px #000c)}
+.page{position:absolute;inset:0;transform-origin:left center;backface-visibility:hidden;transition:transform .72s cubic-bezier(.2,.75,.22,1),opacity .32s;overflow:hidden;background:var(--news);border:1px solid #876f43;clip-path:polygon(.4% .6%,12% 0,27% .4%,44% 0,61% .5%,78% 0,96% .5%,100% 2%,99.6% 18%,100% 38%,99.5% 63%,100% 83%,99.6% 99%,79% 100%,56% 99.6%,31% 100%,7% 99.6%,0 98%,.4% 75%,0 50%,.4% 25%,0 3%)}.page:before{content:"";position:absolute;inset:0;z-index:0;opacity:.3;pointer-events:none;background:radial-gradient(circle at 14% 21%,#8a6639 0 1px,transparent 2px),radial-gradient(circle at 79% 68%,#7f5d33 0 1px,transparent 2px),repeating-linear-gradient(0deg,transparent 0 2px,#5c4b3420 3px);background-size:83px 77px,101px 91px,auto}.page:after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 26px 0 40px #49331f45,inset 0 0 100px #75542638}.page.hidden-left{transform:rotateY(-104deg);opacity:0;pointer-events:none}.page.hidden-right{transform:rotateY(9deg) translateX(14px);opacity:0;pointer-events:none}.page.active{transform:rotateY(0);opacity:1;z-index:5}
+.sheet{height:100%;padding:clamp(18px,3.5vw,43px);display:grid;grid-template-rows:auto 1fr auto;gap:12px;position:relative;z-index:1}.mast{border-top:4px solid var(--ink);border-bottom:4px double var(--ink);padding:5px 0 7px;text-align:center}.flag{display:flex;justify-content:space-between;font:700 10px Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase}.mast h1{font-size:clamp(31px,5.2vw,66px);line-height:.86;margin:2px 0;font-weight:900;letter-spacing:-.055em}.subhead{font-size:clamp(12px,1.5vw,17px);font-style:italic}
+.story{min-height:0;display:grid;grid-template-columns:minmax(120px,.42fr) minmax(0,1.7fr) minmax(120px,.42fr);gap:clamp(10px,2vw,22px);padding-top:3px}.copy{font-size:clamp(8px,1vw,12px);line-height:1.18;text-align:justify}.copy b{display:block;font-size:1.32em;line-height:1;margin-bottom:5px;text-align:left}.copy:first-letter{float:left;font-size:3.2em;line-height:.68;padding:7px 4px 0 0}.photo-box{min-height:0;display:grid;place-items:center;border-left:1px solid #544938;border-right:1px solid #544938;padding:7px 12px}.photo{display:block;max-width:100%;max-height:100%;object-fit:contain;filter:sepia(.22) contrast(1.03);border:3px solid #f2ead0;outline:1px solid #574b38;box-shadow:2px 4px 9px #2c20169c;background:#eee5cb}.photo.fit-full{width:100%;height:100%;max-width:none;max-height:none;object-fit:contain}.names,.callout{align-self:center;border:1px solid rgba(62,45,24,.42);padding:12px;background:#ead9ad99;box-shadow:inset 0 0 18px #6e512126}.names:first-letter,.callout:first-letter{float:none;font-size:inherit;line-height:inherit;padding:0}.names b,.callout b{display:block;margin-bottom:8px;font:700 12px/1.15 Georgia,serif;letter-spacing:.08em;text-transform:uppercase;border-bottom:2px solid var(--ink);padding-bottom:5px}.names ul{list-style:none;margin:0;padding:0;font:700 10px/1.45 'Courier New',monospace}.callout{background:#e8c96dcc;border:3px double #7b1919;color:#42100e;font:700 16px/1.28 Georgia,serif;text-align:center;transform:rotate(-1deg)}.callout b{color:#7b1919;font-size:15px}.caption{font-size:clamp(12px,1.45vw,17px);font-weight:700;border-top:2px solid var(--ink);padding-top:7px;text-align:center}.caption em{font-weight:400}
+.cover-story{display:grid;place-items:center;text-align:center;border-bottom:1px solid var(--ink)}.cover-story h2{font-size:clamp(36px,7vw,84px);line-height:.88;margin:10px 0;text-transform:uppercase}.cover-story .deck{font-size:clamp(15px,2.2vw,25px);font-style:italic;max-width:700px}.edition{font:700 12px Arial,sans-serif;letter-spacing:.2em;color:var(--red);margin-top:15px}.controls{position:fixed;bottom:19px;left:50%;transform:translateX(-50%);z-index:20;display:flex;align-items:center;gap:10px;background:#11100ee8;border:1px solid #9f8653;border-radius:999px;padding:8px;color:#eee0bc;box-shadow:0 8px 26px #000b}.controls button{border:1px solid #ccb173;background:#5d1c18;color:#fff5df;border-radius:999px;padding:11px 17px;font-weight:700;cursor:pointer}.controls button:hover{background:#862a24}.controls button:disabled{opacity:.33;cursor:not-allowed}.counter{min-width:90px;text-align:center;font:700 12px Arial,sans-serif;letter-spacing:.1em}.note{position:fixed;right:18px;top:12px;color:#dbcba3;font:12px Arial,sans-serif;opacity:.7}@media(max-width:740px){.book{height:clamp(470px,calc(100vh - 120px),640px)}.copy{display:none}.copy.names,.copy.callout{display:block;font-size:10px;padding:6px}.names ul{columns:2}.story{grid-template-columns:1fr}.photo-box{border:0;padding:6px}.mast h1{font-size:38px}.sheet{padding:22px 17px}.note{display:none}}
+</style></head><body><style>
+.story:has(img.committee-photo){grid-template-columns:1fr 1fr;grid-template-rows:minmax(0,1fr) auto}
+.story:has(img.committee-photo) .photo-box{grid-column:1/-1;grid-row:1;position:relative;overflow:hidden;padding:0;background:#251b12}
+.story:has(img.committee-photo) .names{grid-column:1;grid-row:2}
+.story:has(img.committee-photo) .copy{grid-column:2;grid-row:2}
+img.committee-photo{position:absolute;inset:0;width:100%;height:100%;max-width:none;max-height:none;object-fit:cover;object-position:center top;border:0;outline:0;box-shadow:none;background:transparent;transform:none!important}
+</style><style>
+/* website fixes: keep tall photos inside the page, and put the two committee name lists side by side */
+.story{grid-template-rows:minmax(0,1fr)}
+.photo-box{grid-template:minmax(0,100%)/minmax(0,100%)}
+.story:has(img.committee-photo) > .names:first-child{grid-column:1}
+.story:has(img.committee-photo) > .names:last-child{grid-column:2}
+</style><main class="stage"><div class="book" id="book"></div></main><div class="note">Arrow keys also turn the pages</div><nav class="controls"><button id="prev">← Previous</button><span class="counter" id="counter"></span><button id="next">Turn Page →</button></nav>
+<script>
+const photos=[
+{src:'nhc-flip-01.jpg',caption:'New Haven County Bowling Association officers and directors'},
+{src:'nhc-flip-02.jpg',caption:'A.B.C. sanctioned leagues — 1968–1969 season'},
+{src:'nhc-flip-03.jpg',caption:'Sanctioned leagues and association instructions — continued'},
+{src:'nhc-flip-04.jpg',caption:'Association tournament champions — 1968–1969 season'},
+{src:'nhc-flip-05.jpg',caption:'Valley Bowl and T-Bowl Lanes — vintage advertisements'},
+{src:'nhc-flip-06.jpg',caption:'Fair-Lanes Bowling Center and Pete Valenti’s Pro Shop'},
+{src:'nhc-flip-07.jpg',caption:'Brunswick Amity Bowling Center and Colony Lanes'},
+{src:'nhc-flip-08.jpg',caption:'Circle Lanes — East Haven'},
+{src:'nhc-flip-09.jpg',caption:'Lakewood All-Star Lanes'},
+{src:'nhc-flip-10.jpg',caption:'New Haven County championship tournament'},
+{src:'nhc-flip-11.jpg',caption:'Brunswick bowling equipment order record'},
+{src:'nhc-flip-12.jpg',caption:'American Bowling Congress association records'},
+{src:'nhc-flip-13.jpg',caption:'Women’s International Bowling Congress records'},
+{src:'nhc-flip-14.jpg',caption:'New Haven County Bowling Association season notice — 1982–83'},
+{src:'nhc-flip-15.jpg',caption:'1968 New Haven County Tournament Committee',names:['Bill Corvino','John Andrade','Sal Franco','Frank Midolo','Jim Hunter','Al Bellucci','Merle Figuenick','John Cavallaro','Lincoln Watley','Jack Jacobson']},
+{src:'nhc-flip-16.jpg',caption:'Association records and important dates — 1980–82'},
+{src:'nhc-flip-17.jpg',caption:'Annual yearbook and average directory cover — 1978–1979'},
+{src:'nhc-flip-18.jpg',caption:'President Calvin D. Iezzi’s message'},
+{src:'nhc-flip-19.jpg',caption:'New Haven County Bowling Association officers'},
+{src:'nhc-flip-20.jpg',caption:'New Haven County executive directors'},
+{src:'nhc-flip-21.jpg',caption:'Association leadership transition — 1978'},
+{src:'nhc-flip-22.jpg',caption:'Awards of Merit and Directors of the Year'},
+{src:'nhc-flip-23.jpg',caption:'Colonial Lanes and Ambassador catering advertisements'},
+{src:'nhc-flip-24.jpg',caption:'1978 tournament champions'},
+{src:'nhc-flip-25.jpg',caption:'Hall of Fame and awards-banquet presentations'},
+{src:'nhc-flip-26.jpg',caption:'Presidents’ Club and county bowling centers'},
+{src:'nhc-flip-27.jpg',caption:'New Haven Women’s Bowling Association officers'},
+{src:'nhc-flip-28.jpg',caption:'Women’s Bowling Association board of directors'},
+{src:'nhc-flip-29.jpg',caption:'Women’s Bowling Association annual meeting — March 1980'},
+{src:'nhc-flip-30.jpg',caption:'ABC handicap manual'},
+{src:'nhc-flip-31.jpg',caption:'New Haven Women’s Bowling Association final averages — 1973–74'},
+{src:'nhc-flip-32.jpg',caption:'American Bowling Congress playing rules — 1982–83'},
+{src:'nhc-flip-33.jpg',caption:'1983 ABC championships and future tournaments'},
+{src:'nhc-flip-34.jpg',caption:'New Haven County USBC average directory — 2019–20'},
+{src:'nhc-flip-35.jpg',caption:'1987 bowling establishments, Hall of Fame and all-star team'},
+{src:'nhc-flip-36.jpg',caption:'1987 county and state Hall of Fame records'},
+{src:'nhc-flip-37.jpg',caption:'County bowling-center and pro-shop advertisements'},
+{src:'nhc-flip-38.jpg',caption:'Brunswick Colony Lanes and Pinbuster tournament'},
+{src:'nhc-flip-39.jpg',caption:'Fair Lanes Milford advertisement'},
+{src:'nhc-flip-40.jpg',caption:'Annual yearbook and directory of averages — 1973–74',fit:'full'},
+{src:'nhc-flip-41.jpg',caption:'New Haven County Bowling Association president’s message — 1974'},
+{src:'nhc-flip-42.jpg',caption:'New Haven County Bowling Association officers'},
+{src:'nhc-flip-43.jpg',caption:'New Haven County executive directors'},
+{src:'nhc-flip-44.jpg',caption:'17th annual championship tournament and 1974–75 calendar'},
+{src:'nhc-flip-45.jpg',caption:'Historical final-average records'},
+{src:'nhc-flip-46.jpg',caption:'New Haven County awards program'},
+{src:'nhc-flip-47.jpg',caption:'New Haven County all-star teams — 1973–74'},
+{src:'nhc-flip-48.jpg',caption:'Tom Partridge — Bowler of the Year',fit:'full'},
+{src:'nhc-flip-49.jpg',caption:'Frank Midolo — Director of the Year'},
+{src:'nhc-flip-50.jpg',caption:'Association Hall of Fame members'},
+{src:'nhc-flip-51.jpg',caption:'John G. Cavallaro inducted for meritorious service'},
+{src:'nhc-flip-52.jpg',caption:'Bob Glenn honored as New Haven County’s youngest 300-game bowler',highlight:'Bob Glenn was honored as the youngest bowler to roll a 300 game in New Haven County.'},
+{src:'nhc-flip-53.jpg',caption:'Handicap tournament winners and event highlights'},
+{src:'nhc-flip-54.jpg',caption:'16th annual tournament non-handicap champions'},
+{src:'nhc-flip-55.jpg',caption:'Sixteenth annual championships tournament results'},
+{src:'nhc-flip-56.jpg',caption:'1967 annual yearbook and directory of averages'},
+{src:'nhc-flip-57.jpg',caption:'New Haven County Bowling Association officers'},
+{src:'nhc-flip-58.jpg',caption:'New Haven County executive directors'},
+{src:'nhc-flip-59.jpg',caption:'Jim Lombardozzi inducted into the Hall of Fame'},
+{src:'nhc-flip-60.jpg',caption:'18th annual tournament champions',fit:'full'},
+{src:'nhc-flip-61.jpg',caption:'18th annual tournament champions — handicap events',fit:'full'},
+{src:'nhc-flip-62.jpg',caption:'19th annual championship tournament notice'},
+{src:'nhc-flip-63.jpg',caption:'Association bowling establishments and lane representatives'},
+{src:'nhc-flip-64.jpg',caption:'Bowling establishments, representatives and period advertisements'},
+{src:'nhc-flip-65.jpg',caption:'New Haven County Junior Bowling Association history'},
+{src:'nhc-flip-66.jpg',caption:'Association records and high-game teams'},
+{src:'nhc-flip-67.jpg',caption:'Association tournament champions — handicap and non-handicap divisions'},
+{src:'nhc-flip-68.jpg',caption:'1973 New Haven County all-star teams'},
+{src:'nhc-flip-69.jpg',caption:'Billy Spigner captures the 1973 Bowler of the Year award'},
+{src:'nhc-flip-70.jpg',caption:'Association Hall of Fame members',fit:'full'},
+{src:'nhc-flip-71.jpg',caption:'Merle Figuencik inducted into the Hall of Fame'},
+{src:'nhc-flip-72.jpg',caption:'Fifteenth annual championships tournament results'},
+{src:'nhc-flip-73.jpg',caption:'Bowling etiquette and Bowlers Victory Legion brochures'},
+{src:'nhc-flip-74.jpg',caption:'New Haven Women’s Bowling Association final average book — 2004–05'},
+{src:'nhc-flip-75.jpg',caption:'New Haven County directory of averages — 1996–97'},
+{src:'nhc-flip-76.jpg',caption:'Secretary’s message from George Frosolone'},
+{src:'nhc-flip-77.jpg',caption:'Directory of averages — 1998–99 season and 41st anniversary'},
+{src:'nhc-flip-78.jpg',caption:'Association records as of August 1, 1999'},
+{src:'nhc-flip-79.jpg',caption:'New Haven County bowling tournament at AMF Circle Lanes — February 2000'},
+{src:'nhc-flip-80.jpg',caption:'800 sets honor roll'},
+{src:'nhc-flip-81.jpg',caption:'President’s message from Leon Saunders'},
+{src:'nhc-flip-82.jpg',caption:'President’s report from Betty Amato, New Haven County USBC Association',fit:'full'},
+{src:'nhc-flip-83.jpg',caption:'New Haven County USBC association records as of July 31, 2014',fit:'full'}
+];const filler=`New Haven County bowlers have gathered for generations in neighborhood lanes, championship tournaments and association meetings. These surviving pages preserve the names, places and achievements that built a proud local tradition.`;const pages=[{cover:true},...photos,{ending:true}];const book=document.querySelector('#book');const mast=`<header class="mast"><div class="flag"><span>New Haven, Connecticut</span><span>Special Archive Edition</span></div><h1>The New Haven Register</h1><div class="subhead">County Bowling Through the Years • Established 1958</div></header>`;
+pages.forEach((p,i)=>{const el=document.createElement('article');el.className='page'+(p.cover?' cover':'');if(p.cover){el.innerHTML=`<div class="sheet">${mast}<section class="cover-story"><div><div class="edition">A COMMEMORATIVE HISTORY</div><h2>Bowling<br>Through<br>The Years</h2><p class="deck">The people, tournaments and neighborhood lanes of New Haven County</p></div></section><div class="caption">Turn the page to enter the archive</div></div>`}else if(p.ending){el.innerHTML=`<div class="sheet">${mast}<section class="cover-story"><div><div class="edition">THE STORY CONTINUES</div><h2>Now It's<br>Your Turn</h2><p class="deck">This archive now presents the complete set of eighty-three unique originals, with duplicates excluded.</p></div></section><div class="caption">All eighty-three unique originals are included once.</div></div>`}else{const split=p.names?Math.ceil(p.names.length/2):0;const list=arr=>`<ul>${arr.map(n=>`<li>${n}</li>`).join('')}</ul>`;const left=p.names?`<aside class="copy names"><b>Committee Members</b>${list(p.names.slice(0,split))}</aside>`:`<p class="copy"><b>County history preserved</b>${filler}</p>`;const right=p.names?`<aside class="copy names"><b>Committee Members</b>${list(p.names.slice(split))}</aside>`:p.highlight?`<aside class="copy callout"><b>Historic 300 Game</b>${p.highlight}</aside>`:`<p class="copy"><b>From the archives</b>${filler}</p>`;el.innerHTML=`<div class="sheet">${mast}<section class="story">${left}<div class="photo-box"><img class="photo${p.names?' committee-photo':''}${p.fit==='full'?' fit-full':''}" data-src="${p.src}" decoding="async" alt="New Haven County bowling archive item"></div>${right}</section><div class="caption">${p.caption} <em>• Rotated and cropped for reading</em></div></div>`}book.append(el)});
+const els=[...document.querySelectorAll('.page')],prev=document.querySelector('#prev'),next=document.querySelector('#next'),counter=document.querySelector('#counter');let current=0;function load(i){const im=els[i]&&els[i].querySelector("img[data-src]");if(im){im.src=im.dataset.src;im.removeAttribute("data-src")}}function render(){for(let k=current-1;k<=current+2;k++)load(k);els.forEach((el,i)=>{el.classList.toggle('active',i===current);el.classList.toggle('hidden-left',i<current);el.classList.toggle('hidden-right',i>current);el.style.zIndex=i===current?5:String(pages.length-i)});prev.disabled=current===0;next.disabled=current===pages.length-1;counter.textContent=`PAGE ${current+1} OF ${pages.length}`}function go(n){current=Math.max(0,Math.min(pages.length-1,n));render()}prev.onclick=()=>go(current-1);next.onclick=()=>go(current+1);addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')go(current+1);if(e.key==='ArrowLeft')go(current-1)});render();
+</script></body></html>
